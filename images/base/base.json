@@ -20,6 +20,9 @@
     "script": "images/base/provision/add_users.sh"
   }, {
     "type": "shell",
+    "script": "images/base/provision/time.sh"
+  }, {
+    "type": "shell",
     "script": "images/base/provision/install_ethermintd.sh"
   }]
 }
