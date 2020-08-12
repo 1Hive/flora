@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Require $DO_TOKEN to be set
+if [[ -z "${DO_TOKEN}" ]]; then
+  >&2 echo "Please set \$DO_TOKEN to your DigitalOcean access token to run this command."
+  exit 1
+fi
+
+# Require $DO_REGION to be set
+if [[ -z "${DO_REGION}" ]]; then
+  >&2 echo "Please set \$DO_REGION to the DigitalOcean build region to run this command."
+  exit 1
+fi
+
+# Require `packer` to be installed and available
+if ! [ -x "$(command -v packer)" ]; then
+  >&2 echo "Please install packer to run this command (https://packer.io/)."
+  exit 1
+fi
+
+echo ''
+echo '> Building base image (images/base.json)'
+packer build images/base/base.json
+

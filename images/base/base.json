@@ -1,0 +1,22 @@
+{
+  "variables": {
+    "do_token": "{{env `DO_TOKEN`}}",
+    "do_region": "{{env `DO_REGION`}}"
+  },
+  "builders": [{
+    "type": "digitalocean",
+    "api_token": "{{user `do_token`}}",
+    "image": "ubuntu-16-04-x64",
+    "region": "{{user `do_region`}}",
+    "size": "512mb",
+    "ssh_username": "root",
+    "tags": ["packer"]
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "script": "provision/install_base_pkgs.sh"
+  }, {
+    "type": "shell",
+    "script": "provision/install_ethermintd.sh"
+  }]
+}
