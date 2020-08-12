@@ -8,6 +8,7 @@
     "api_token": "{{user `do_token`}}",
     "image": "ubuntu-20-04-x64",
     "region": "{{user `do_region`}}",
+    "snapshot_name": "flora-base",
     "size": "2gb",
     "ssh_username": "root",
     "tags": ["packer"]
