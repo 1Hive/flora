@@ -1,8 +1,9 @@
 # Configuration
-export $GO_VER="1.15"
+export GO_VER="1.15"
+export DEBIAN_FRONTEND=noninteractive
 
 # Upgrade system packages
-sudo apt-get -y update
+sudo apt-get update
 sudo apt-get -y upgrade
 
 # Install build-essential
