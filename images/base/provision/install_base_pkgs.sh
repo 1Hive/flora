@@ -1,5 +1,5 @@
 # Configuration
-export $GO_VER=1.15
+export $GO_VER="1.15"
 
 # Upgrade system packages
 sudo apt-get -y update

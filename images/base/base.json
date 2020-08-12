@@ -14,9 +14,9 @@
   }],
   "provisioners": [{
     "type": "shell",
-    "script": "provision/install_base_pkgs.sh"
+    "script": "images/base/provision/install_base_pkgs.sh"
   }, {
     "type": "shell",
-    "script": "provision/install_ethermintd.sh"
+    "script": "images/base/provision/install_ethermintd.sh"
   }]
 }
