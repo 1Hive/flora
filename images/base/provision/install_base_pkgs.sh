@@ -16,6 +16,7 @@ sudo apt-get \
 sudo apt-get -y install build-essential git wget
 
 # Install go
+mkdir -p /usr/local/go/bin
 sudo apt-get -y install golang
 go version
 go env

@@ -17,6 +17,9 @@
     "script": "images/base/provision/install_base_pkgs.sh"
   }, {
     "type": "shell",
+    "script": "images/base/provision/add_users.sh"
+  }, {
+    "type": "shell",
     "script": "images/base/provision/install_ethermintd.sh"
   }]
 }

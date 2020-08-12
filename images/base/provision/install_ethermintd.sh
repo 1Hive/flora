@@ -3,5 +3,4 @@ mkdir -p /tmp/ethermint
 cd /tmp/ethermint
 git clone https://github.com/ChainSafe/ethermint.git
 cd ethermint
-sudo make install
-
+GOPATH=/usr/local/go make install
