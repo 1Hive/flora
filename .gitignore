@@ -1,3 +1,5 @@
 build
 crash.log
 terraform.tfstate*
+.terraform
+
