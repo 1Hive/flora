@@ -1,0 +1,28 @@
+#!/bin/bash
+set -e
+
+# Require $SSH_KEYS to be set
+if [[ -z "${SSH_KEYS}" ]]; then
+  >&2 echo "Please set \$SSH_KEYS to a list ([\"foo\", \"bar\"]) of DigitalOcean SSH key fingerprints."
+  exit 1
+fi
+
+# Require `terraform` to be installed and available
+if ! [ -x "$(command -v terraform)" ]; then
+  >&2 echo "Please install terraform to run this command (https://terraform.io/)."
+  exit 1
+fi
+
+# Build image
+./bin/build
+
+# Deploy
+cd infrastructure
+
+echo ''
+echo '> Initializing terraform'
+terraform init
+
+echo ''
+echo '> Deploying node(s)'
+terraform apply -var "do_token=$DO_TOKEN" -var 'ssh_keys=$SSH_KEYS'

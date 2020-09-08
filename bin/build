@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Require $DO_TOKEN to be set
 if [[ -z "${DO_TOKEN}" ]]; then
@@ -19,6 +20,8 @@ if ! [ -x "$(command -v packer)" ]; then
 fi
 
 echo ''
-echo '> Building base image (images/base.json)'
-packer build images/base/base.json
+echo '> Building node image (images/node/node.json)'
+packer build images/node/node.json
 
+echo ''
+echo 'OK.'
